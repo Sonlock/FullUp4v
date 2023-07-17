@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Agrega un comentario para describir el propósito de esta sección -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Recepción Vehiculo</title>
+    <link href="carga.jpg" rel="Shortcut Icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div>
+    <h1>Recepción Vehiculos</h1>
+    <p>Formulario para el envío de datos<br>
+      <a href="https://wa.me/?text=*Describa el error en la app :* %0A%0A" target="_blank" rel="noopener noreferrer">Reportar error en la app
+      </a>
+    </p>
+  </div>
+    <div>
+    <form id="formulario" class="form-group" action="#" method="get" onsubmit="abrirWhatsapp()">
+      <label for="codigo">Código :</label>
+      <select id="codigo" class="boxinput" required>
+        <option>JT3</option>
+        <option>I - 18</option>
+        <option>I - 21</option>
+        <option>I - 30</option>
+        <option>I - 63</option>
+        <option>I - 83</option>
+        <option>I - 90</option>
+        <option>I - 92</option>
+        <option>I - 110</option>
+        <option>I - 126</option>
+        <option>I - 127</option>
+        <option>I - 132</option>
+        <option>I - 137</option>
+        <option>I - 157</option>
+        <option>I - 171</option>
+        <option>I - 179</option>
+        <option>I - 180</option>
+        <option>I - 194</option>
+        <option>I - 196</option>
+        <option>I - 199</option>
+        <option>I - 205</option>
+        <option>I - 212</option>
+        <option>I - 217</option>
+        <option>I - 220</option>
+      </select>
+      <label class="car" for="vehiculo">PPU :</label>
+      <input class="vehiculo" type="text" maxlength="4" name="vehiculo" id="vehiculo" placeholder="XXXX" required onkeypress="return soloMayus(event)">
+      <label for="ppu">*</label>
+      <input class="ppu" type="number" maxlength="2" name="ppu" id="ppu" placeholder="XX" required onkeypress="return soloNumeros(event)">
+    </div>
+  </div>
+<script>
+function soloMayus(event) {
+  var codigoTecla = event.keyCode ? event.keyCode : event.which;
+  if (codigoTecla < 65 || codigoTecla > 90) 
+  if (codigoTecla < 97 || codigoTecla > 122) {
+    event.preventDefault();
+  }
+}
+  
+</script>
+<script>
+
+const inputText = document.getElementById('vehiculo');
+      inputText.addEventListener('input', () => {
+      inputText.value = inputText.value.toUpperCase();
+      });
+</script>
+<script>
+vehiculo.addEventListener('keyup', function() {
+  if (this.value.length === 4) {
+    ppu.focus();
+  }
+});
+
+ppu.addEventListener('keyup', function() {
+  if (event.target.value.length === parseInt(event.target.getAttribute("maxlength"))){
+  conos.focus();
+  }
+});
+
+conos.addEventListener('input', function() {
+  if (this.value.length === 2) {
+    ppu.focus();
+  }
+});
+</script>
+
+  <div class="form-group">
+    <label for=""><h3>Vehiculo :</h3></label>
+    <br>
+    <div class="form-group2" id="vehiculo2" required>
+    <input type="radio" name="vehiculo1" id="vehiculosi" value="1">
+    <label for="vehiculosi">Auto</label>
+    <input type="radio" name="vehiculo1" id="vehiculono" value="2">
+    <label for="vehiculono">Moto</label>
+  </div>
+</div>
+</tr>
+<br>
+<div class="form-group" style="display:none" id="plantilla">
+  <label for="lol"><h3>Verificar Cargos</h3> 
+    <input maxlength="2" name="conos" type="number" class="conos" id="conos" placeholder="XX">
+    <label for="conos">Conos </label>
+</div>
+</div>
+    <div class="form-group3" for="">
+    <table id="verificar" style="display:none">
+      <tbody>
+    <tr>
+      <td>
+        <div id="opciones2" class="check">          
+          <input type="checkbox"  value="todos" id="todos">
+          <label for="todos">Todos</label>
+          </div>
+            <div id="opciones3" style="display: none;">
+              <input type="checkbox"  value="todosmoto" id="todosmoto">
+            <label for="todosmoto">Todos</label>
+          </div>
+        </div>
+      </td>
+          <td>
+            <input class="checkboxright" type="checkbox" id="aseo"> 
+            <label for="aseo">Aseo</label>
+          </td>
+      </tr>
+        <tr>
+              <td>
+                <input type="checkbox" id="tarjeta" value="tarjeta Combustible">
+                <label for="tarjeta">Tarj. Combustible</label>
+              </td>
+              <td>
+                <input class="checkboxright" type="checkbox" id="bitacora">
+                <label for="bitacora">Bitacora</label>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <input type="checkbox" id="doc">
+                <label for="doc">Doc. Vehiculo</label>
+              </td>
+
+              <td>
+                <div class="form-group3" id="carga2">
+                <input class="checkboxright" type="checkbox" id="gata">
+                <label for="gata">Gata</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-group3" id="carga3">
+                <input type="checkbox" id="llave">
+                <label for="llave">Llave Rueda</label>
+                </div>
+              </td>
+              <td>
+                <div class="form-group3" id="carga4">
+                <input class="checkboxright" type="checkbox" id="extintor">
+                <label for="extintor">Extintor</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-group3" id="carga5">
+                <input type="checkbox" id="rueda">
+                <label for="rueda">Rueda Repuesto</label>
+              </td>
+              <td>
+                <div class="form-group3" id="carga6">
+                <input class="checkboxright" type="checkbox" id="escudo"> 
+                <label for="escudo">Escudo</label>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>  
+  </div>  
+    <script>
+    </script>
+    
+    <div class="form-group" id="opciones" required>
+      <label for=""><h3>Carga Combustible :</h3></label>
+      <br>
+      <div class="form-group2" id="opciones" required>
+      <input type="radio" name="opc1" id="si" value="1" onchange="borrarInputs()">
+      <label for="si">Si</label>
+      <input type="radio" name="opc1" id="no" value="2" onchange="borrarInputs()">
+      <label for="no">No</label>
+    </div>
+  </div>
+<div>
+  <div class="form-group" for="estanque">
+    <div>
+    <label for="estanque">Estado estanque :</label>
+      <select class="estanque" id="estanque" required>
+        <option>100 %</option>
+        <option> 90 %</option>
+        <option> 80 %</option>
+        <option> 70 %</option>
+        <option> 60 %</option>
+        <option> 50 %</option>
+        <option> 40 %</option>
+        <option> 30 %</option>
+        <option> 20 %</option>
+        <option> 10 %</option>
+      </select>
+    </div>
+  </div>
+
+<script>
+</script>
+    <div class="form-group" id="carga" style="display:none;">
+      <div>
+      <label for="boucher">Boucher :</label>
+      <input class="boucher" type="number" name="bou" id="boucher" placeholder="XXXX">
+      <label for="boucher">(Ultimos 4 digitos)</label>
+      </div>
+      <div>
+      <label for="lugar">Lugar:</label>
+       <select class="lugar" id="lugar">
+        <option>Lugar no seleccionado</option>
+        <option>C-109 (Manquehue Nte./Los Militares)</option>
+        <option>C-143 (Rotonda Atenas)</option>
+        <option>C-145 (Las Condes 9595)</option>
+        <option>C-147 (Las Condes/San Francisco de Asis)</option>
+        <option>C-148 (Manquehue Sur/Isabel La Catolica)</option>
+      </select>
+        <label for="hora">Hora :</label>
+        <input class="hora" type="number" name="hora" id="hora" placeholder="XX">
+        <label for="">:</label>
+        <input class="minuto" type="number" name="minuto" id="minuto" placeholder="XX">
+        <label for="">Hrs.</label>
+    </div>
+  </div>
+  <script>
+const boucherInput = document.getElementById('boucher');
+boucherInput.addEventListener('keyup', function(event) {
+        if (this.value.length === 4) {
+            document.getElementById('lugar').focus();
+        }
+    })
+
+    const horaInput = document.getElementById('hora');
+    horaInput.addEventListener('keyup', function(event) {
+        if (this.value.length === 2) {
+            document.getElementById('minuto').focus();
+        }
+    });
+
+    const minutoInput = document.getElementById('minuto');
+    minutoInput.addEventListener('keyup', function(event) {
+        if (this.value.length === 2) {
+            document.getElementById('novedadesvehiculo').focus();
+        }
+    });
+</script>
+<div>
+        <textarea class="novedadesvehiculo" name="novedadesvehiculo" id="novedadesvehiculo" placeholder="Novedades Vehiculo" cols="30" rows="2"></textarea>
+    <div>
+        <button id="submit" type="submit" class="boton"><i >
+        <img src="whatsapp.svg" alt="Icone Whatsapp"></i> Enviar WhatsApp
+        </button>
+    </div>
+  </form>
+
+    <script type="text/javascript">
+      $(".box-input input").on("focus", function(){
+          $(this).addClass("focus");
+      });
+
+      $(".box-input input").on("blur", function(){
+          if($(this).val() == ""){
+              $(this).removeClass("focus");
+          }
+      });
+  </script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="whatsapp.js"></script>
+  <script  src="./script.js"></script>
+</body>
+</html>
